@@ -16,12 +16,12 @@ Everything is plain SQL and one Python script.
 Database_ClassProjects/
 ├─ Database/
 │ ├─ schema.sql
-│ └─ erd_oltp.pdf (ERD diagram you added)
+│ └─ data_model.pdf (ERD diagram)
 ├─ ETL/
-│ └─ ETL.py (or etl.py if you renamed it)
+│ └─ ETL.py 
 └─ Data_Warehouse/
 ├─ schema.sql
-└─ erd_dw.pdf (ERD diagram you added)
+└─ data_model.pdf (ERD diagram)
 
 
 ### Database/
@@ -36,8 +36,8 @@ Main ideas:
 - Many-to-many tables handle writers, translators, languages, and genres.
 
 ### ETL/
-- **`ETL.py`**: A metadata-driven pipeline (PostgreSQL → PostgreSQL).  
-  It reads tables, columns, PKs, and FKs from `information_schema` (no hard-coded table names).
+- **`ETL.py`**: A metadata-driven pipeline.  
+  It reads tables, columns, PKs, and FKs from `information_schema`.
   It builds a DAG of dependencies and does:
   1) **DELETE** (children → parents)  
   2) **INSERT/UPDATE** (parents → children)
